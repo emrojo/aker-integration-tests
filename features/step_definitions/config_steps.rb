@@ -37,8 +37,8 @@ end
 Given(/^I am logged in$/) do
   if INTEGRATION_TESTS_CONFIG['perform_login']
     if page.has_content?("Aker Log in")
-      fill_in("Username/Email", with: ENV['USERNAME'])
-      fill_in("Password", with: ENV['PASSWORD'])
+      fill_in("Username/Email", with: ENV['AKER_USERNAME'])
+      fill_in("Password", with: ENV['AKER_PASSWORD'])
       click_on('Log in')
     end
   end
