@@ -33,3 +33,13 @@ end
 Given(/^the product I will use is "([^"]*)"$/) do |prod|
   @product_defined = prod
 end
+
+Given(/^I am logged in$/) do
+  if INTEGRATION_TESTS_CONFIG['perform_login']
+    if page.has_content?("Aker Log in")
+      fill_in("Username/Email", with: INTEGRATION_TESTS_CONFIG['username'])
+      fill_in("Password", with: INTEGRATION_TESTS_CONFIG['password'])
+      click_on('Log in')
+    end
+  end
+end

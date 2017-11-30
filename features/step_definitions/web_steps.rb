@@ -10,10 +10,12 @@ end
 
 Given(/^I go to the Submission application$/) do
   visit @submission_url
+  step("I am logged in")
 end
 
 Given(/^I go to the Work order application$/) do
   visit @work_order_url
+  step("I am logged in")
   step("I should see \"Work Orders\"")
 end
 
