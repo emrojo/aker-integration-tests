@@ -21,7 +21,7 @@ unless INTEGRATION_TESTS_CONFIG['proxy']
   ENV['HTTP_PROXY']=''
 end
 
-Capybara.default_wait_time = INTEGRATION_TESTS_CONFIG['capybara_default_wait_time'] || 10
+Capybara.default_max_wait_time = INTEGRATION_TESTS_CONFIG['capybara_default_wait_time'] || 10
 
 Capybara.register_driver :chrome do |app|
   Capybara::Selenium::Driver.new(app, :browser => :chrome)
