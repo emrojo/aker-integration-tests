@@ -33,7 +33,7 @@ end
 Capybara.register_driver :poltergeist_debug do |app|
   Capybara::Poltergeist::Driver.new(app, url_blacklist: ['https://fonts.googleapis.com'],
     timeout: INTEGRATION_TESTS_CONFIG['default_wait_time'],
-    phantomjs_options: ['--ignore-ssl-errors=true']
+    phantomjs_options: ['--ignore-ssl-errors=yes']
     #js_errors: true, phantomjs_logger: STDOUT,
                      #phantomjs_options: ['--debug=true'],
     #                inspector: true
