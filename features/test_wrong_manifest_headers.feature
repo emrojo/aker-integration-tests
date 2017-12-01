@@ -23,6 +23,7 @@ Then I am in "Biomaterial Metadata"
 
 Given I upload the file "test/data/incorrect_headers_manifest.csv"
 Then I should see a modal with the text "Select CSV mappings"
+Then I save a screenshot
 Then "form-fields" should contain "Taxon ID (taxon_id)"
 Then "form-fields" should contain "Position (position)"
 Then "form-fields" should contain "Scientific Name (scientific_name)"
@@ -106,8 +107,10 @@ When I select "cancer" from the "fields-from-csv" select
 
 Given I click on "match-fields-button"
 Then "matched-fields-table" should contain 9 rows
+Then I save a screenshot
 
 Given I click on "complete-csv-matching"
 Then I should see data from my file like a dropdown with "Lysed Cells" selected
 Then I should see data from my file like a dropdown with "female" selected
 Then I should see data from my file like a textbox containing "Homo sapiens"
+Then I save a screenshot

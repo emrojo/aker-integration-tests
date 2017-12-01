@@ -70,11 +70,11 @@ end
 
 Given(/^I go to next screen$/) do
   within(first('form > .row > .col-md-12')) { click_on('Next') }
-  step("I save a screenshot")
 end
 
 Then(/^I am in "([^"]*)"$/) do |arg1|
   expect(page).to have_content(arg1)
+  step("I save a screenshot")
 end
 
 

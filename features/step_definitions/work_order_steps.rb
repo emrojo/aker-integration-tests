@@ -11,6 +11,7 @@ Then(/^I should be on the step: "([^"]*)"$/) do |text|
   within(:css, "div.active") do
     expect(page.has_content?(text)).to eq(true)
   end
+  step("I save a screenshot")
 end
 
 Then(/^I choose the submission created before$/) do

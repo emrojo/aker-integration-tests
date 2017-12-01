@@ -74,6 +74,8 @@ Then I should see "Your work order has been created"
 
 Given I go to Sequencescape
 When I go to the view for the previously created work order in Sequencescape
+Then I save a screenshot
 And I click on "Complete"
 
 Then I should see "completed"
+Then I save a screenshot
