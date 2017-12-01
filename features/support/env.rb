@@ -7,7 +7,7 @@ require "selenium/webdriver"
 
 require 'yaml'
 
-Dir.mkdir 'screenshots'
+Dir.mkdir 'screenshots' unless File.exists?('screenshots')
 
 environment_file_path = ENV['INTEGRATION_TESTS_CONFIG']
 unless environment_file_path && File.exists?(environment_file_path)
@@ -32,9 +32,9 @@ end
 
 Capybara.register_driver :poltergeist_debug do |app|
   Capybara::Poltergeist::Driver.new(app, url_blacklist: ['https://fonts.googleapis.com'],
-    js_errors: true, phantomjs_logger: STDOUT,
+    #js_errors: true, phantomjs_logger: STDOUT,
                      #phantomjs_options: ['--debug=true'],
-                    inspector: true
+    #                inspector: true
     )
 end
 
