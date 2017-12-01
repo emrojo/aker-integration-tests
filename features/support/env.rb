@@ -7,6 +7,8 @@ require "selenium/webdriver"
 
 require 'yaml'
 
+Dir.mkdir 'screenshots'
+
 environment_file_path = ENV['INTEGRATION_TESTS_CONFIG']
 unless environment_file_path && File.exists?(environment_file_path)
   puts "You need to specify the config file in INTEGRATION_TESTS_CONFIG environment variable."
@@ -14,6 +16,7 @@ unless environment_file_path && File.exists?(environment_file_path)
 end
 
 INTEGRATION_TESTS_CONFIG = YAML::load(File.open(environment_file_path))
+
 
 unless INTEGRATION_TESTS_CONFIG['proxy']
   ENV['http_proxy']=''

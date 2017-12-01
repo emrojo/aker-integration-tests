@@ -4,6 +4,13 @@
 # General browser actions
 ###
 
+After do |scenario|
+  if (scenario.failed?)
+    page.driver.save_screenshot("screenshots/#{scenario.__id__}.png")
+    embed("screenshots/#{scenario.__id__}.png", "image/png", "SCREENSHOT")
+  end
+end
+
 Given(/^I go to Sequencescape$/) do
   visit @sequencescape_url
 end
