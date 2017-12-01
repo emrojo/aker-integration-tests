@@ -1,7 +1,5 @@
 # Aker Integration Tests
 
-## Introduction
-
 Bundle of feature tests for Aker to be able to execute integration tests in local and staging
 
 ## Configuration
