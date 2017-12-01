@@ -51,6 +51,13 @@ Then(/^show me the page$/) do
   save_and_open_page
 end
 
+Then(/^I save a screenshot$/) do
+  timestamp =Time.now.strftime("%Y-%m-%d-%H:%M:%s")
+  file_str = "screenshots/#{timestamp}.png"
+  page.driver.save_screenshot(file_str)
+  embed(file_str, "image/png", "SCREENSHOT")  
+end
+
 When(/^I select "([^"]*)" from the "([^"]*)" select$/) do |option, dropdown|
   select(option, from: dropdown)
 end
