@@ -5,16 +5,19 @@
 Given(/^I go to the Dispatch Labware$/) do
   visit "#{@submission_url}/completed_submissions"
   step("I should see \"Dispatch Labware\"")
+  step("I save a screenshot")
 end
 
 Given(/^I go to the Material Reception$/) do
   visit "#{@submission_url}/material_receptions"
   step("I should see \"Material Reception\"")
+  step("I save a screenshot")
 end
 
 Given(/^I go to check the contents of the submission created before$/) do
   visit "#{@submission_url}/material_submissions/#{@submission}"
   step("I should see \"Material Submission\"")
+  step("I save a screenshot")
 end
 
 Given(/^I select a type of labware$/) do
@@ -27,6 +30,7 @@ end
 
 When(/^I upload the file "([^"]*)"$/) do |arg1|
   attach_file('Upload CSV', File.absolute_path(arg1), make_visible: true)
+  step("I save a screenshot")
 end
 
 Then(/^I will know the barcodes of the labware I created for the submission$/) do
@@ -48,8 +52,8 @@ Given(/^I scan one by one the barcodes from the previous submission$/) do
     field.set("#{barcode}")
     field.send_keys(:enter)
     step("I should see \"Barcode scanned\"")
-    save_screenshot('scanned_barcode.png')
   end
+  step("I save a screenshot")  
 end
 
 Given(/^I print the submission created before$/) do
@@ -66,6 +70,7 @@ end
 
 Given(/^I go to next screen$/) do
   within(first('form > .row > .col-md-12')) { click_on('Next') }
+  step("I save a screenshot")
 end
 
 Then(/^I am in "([^"]*)"$/) do |arg1|
