@@ -34,12 +34,13 @@ product_name: testing_product
 sanger_sample_guardian: mymail@mail
 ```
 
-== How to run it
+## How to run it
 
 * Start all services for Aker to test
 
-* Run the integration tests with:
+* Run the integration tests:
 
 ```
+bundle install
 INTEGRATION_TESTS_CONFIG=config/local.yml bundle exec cucumber 
 ```
